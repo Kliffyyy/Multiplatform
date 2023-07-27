@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-
 @main
 struct Multiplatform_macOSApp: App {
     var body: some Scene {
         WindowGroup {
+            #if os(macOS)
             ContentView_mac()
+            #elseif os(iOS)
+            ContentView_iOS()
+            #endif
         }
     }
 }

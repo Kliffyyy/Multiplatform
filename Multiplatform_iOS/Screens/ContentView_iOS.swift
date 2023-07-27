@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentView_iOS: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            TutorListView(tutors: Tutor.all())
+                .listStyle(PlainListStyle())
+        }
     }
 }
 

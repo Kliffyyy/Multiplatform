@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 enum Experience: String {
     case student = "Student"
@@ -41,14 +40,15 @@ struct Tutor: Identifiable {
     let description: String
     let rating: Int?
     let laguage: [String?]
+    let exp: Experience
 }
 
 extension Tutor {
     
     static func all() -> [Tutor] {
-        return [Tutor(name: "Roger Yeo", image: "image_1", description: "A proud member of GeeksHacking", rating: 3, laguage: ["Javascript", "Swift"] ),
-                Tutor(name: "Julian Teh", image: "image_2", description: "A proud member of GeeksHacking", rating: 3, laguage: ["Swift"] ),
-                Tutor(name: "Luke Yeo", image: "image_3", description: "SSTinc Student Teacher", rating: 3, laguage: ["Swift Storyboards"] ), 
+        return [Tutor(name: "Roger Yeo", image: "image_1", description: "A proud member of GeeksHacking", rating: 3, laguage: ["Javascript", "Swift"], exp: .coder),
+                Tutor(name: "Julian Teh", image: "image_2", description: "A proud member of GeeksHacking", rating: 3, laguage: ["Swift"], exp: .teacher),
+                Tutor(name: "Luke Yeo", image: "image_3", description: "SSTinc Student Teacher", rating: 3, laguage: ["Swift Storyboards"], exp: .basic), 
                 ]
     }
 }
